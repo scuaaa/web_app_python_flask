@@ -20,6 +20,11 @@ Set the IP address 0.0.0.0/0, opening to any IP address.
 Go to database, and select Browse Collections. Then Add My Own Data. The database name and the collection name will be used to connected to your database.
 ![](pictures/create_collection.png)
 
-Download mogodb and mongodb compass. Open a terminal at the repo position,  if you use mogodb shell 
+Now [import]( https://www.mongodb.com/docs/atlas/import/mongoimport/) the dataset chicago criminal data, First get the mongodb atlas connection uri. Click Databases in the top-left corner of Atlas. From the Database Deployments view, click Connect for the Atlas cluster into which you want to migrate data. Click Connect Your Application, and you can get uri like this.  
+
+¡°mongodb+srv://<your user id>:<password>@cluster0.zu5gllz.mongodb.net/?retryWrites=true&w=majority¡±
+
+Download mongodb and install it. Use mongoimport to import the dataset to your collection, the sample code should be  
+mongoimport --uri "mongodb+srv://<username>:<userpassword>@cluster0.zu5gllz.mongodb.net/<databsename>?retryWrites=true&w=majority" --collection <collection¡· /drop /jsonArray /file:dataset/crime.json
 
 
