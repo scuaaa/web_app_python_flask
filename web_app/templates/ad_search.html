@@ -1,0 +1,157 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0041)http://web.missouri.edu/~itch9/ad_search.html -->
+
+<html>
+<head><title>Criminal Records Search</title>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8"><link
+href="stylecss.css" type="text/css" rel="stylesheet">
+<meta content="MSHTML 6.00.6000.16481" name=GENERATOR>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+
+
+<table width="850" height="38" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a name="top"></a><a href="ad_search.html"></td>
+  </tr>
+
+  <tr>
+    <td><div align="left"><!--start navigation here-->
+      <div class="nav">
+<img src="static/mapsearch.jpg" alt="search" width="150" height="100"  />
+<a href="ad_search.html" title="Home" style="border-right: 1px solid #666666;"> Home </a>
+	<a href="caseid.html" title="Search for Location" style="border-right: 1px solid #666666;"> Case ID Search </a>
+	<a href="location.html" title="Search for Location" style="border-right: 1px solid #666666;"> Location Search </a>
+	<a href="criminaltype.html" title="Criminal Type Search" style="border-right:1px solid #666666;"> Criminal Type Searh </a>
+	<a href="criminaltime.html" title="Criminal Time Search" style="border-right: 1px solid #666666;"> Criminal Time Search </a>
+	<a href="admin.html" title="Criminal Time Search" style="border-right: 1px solid #666666;"> Admin </a>
+
+    </div></td>
+  </tr>
+</table>
+
+<table width="850" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td height="20" style="background-image: url(images/top.gif); background-repeat:no-repeat;">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td class="bodybg">
+	<table width="848" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="100%" height="31"><h1>Chicago Criminal Records Search(CCRS)</h1></td>
+        <td width="348"><div class="subnav" align="right">
+        </div>
+        </p></td></tr>
+
+
+        <tr>
+        <td colspan="2">
+        <img src="static/crimerecord.jpg" alt="search" width="100%" height="300" />
+        </td>
+        </tr>
+
+        </table>
+
+        <h1>CCR Search Engine</h1>
+<form method="post">
+          <div id='e'> <div class="a"> <form id="bg-search" name="search" method="GET" action="/search" target="_top">
+
+<br />
+<div id="criminaltype" class="f"> <label>Criminal Type:</label> <div class="g">
+<select class="criminal type-select" name="criminal type">
+<option value='ARSON'>ARSON</option>
+<option value='ASSAUL'>ASSAULT</option>
+<option value='BATTERY'>BATTERY</option>
+<option value='BURGLARY'>BURGLARY</option>
+<option value='CONCEALED CARRY LICENSE VIOLATION'>CONCEALED CARRY LICENSE VIOLATION</option>
+<option value='CRIMINAL DAMAGE'>CRIMINAL DAMAGE</option>
+<option value='CRIMINAL SEXUAL ASSAULT'>CRIMINAL SEXUAL ASSAULT</option>
+<option value='CRIMINAL TRESPASS'>CRIMINAL TRESPASS</option>
+<option value='DECEPTIVE PRACTICE'> DECEPTIVE PRACTICE</option>
+<option value='GAMBLING'>GAMBLING</option>
+<option value='HOMICIDE'>HOMICIDE</option>
+<option value='HUMAN TRAFFICKING'>HUMAN TRAFFICKING</option>
+<option value='INTERFERENCE WITH PUBLIC OFFICER'>INTERFERENCE WITH PUBLIC OFFICER</option>
+<option value='IITIMIDATION'> INTIMIDATION</option>
+<option value='KIDNAPPING'>KIDNAPPING</option>
+<option value='LIQUOR LAW VIOLATION'>LIQUOR LAW VIOLATION</option>
+<option value='MOTOR VEHICLE THEFT'>MOTOR VEHICLE THEFT</option>
+<option value='NARCOTICS'>NARCOTICS</option>
+<option value='NON-CRIMINAL'>NON-CRIMINAL</option>
+<option value='OBSCENITY'>OBSCENITY</option>
+<option value='OFFENSE INVOLVING CHILDREN'>OFFENSE INVOLVING CHILDREN</option>
+<option value='OTHER NARCOTIC VIOLATION'>OTHER NARCOTIC VIOLATION</option>
+<option value='OTHER OFFENSE'>OTHER OFFENSE</option>
+<option value='PROSTITUTION'>PROSTITUTION</option>
+<option value='PUBLIC INDECENCY'>PUBLIC INDECENCY</option>
+<option value='PUBLIC PEACE VIOLATION'>PUBLIC PEACE VIOLATION</option>
+<option value='ROBBERY'>ROBBERY</option>
+<option value='SEX OFFENSE'>SEX OFFENSE</option>
+<option value='STALKING'>STALKING</option>
+<option value='THEFT'>THEFT</option>,
+<option value='WEAPONS VIOLATION'>WEAPONS VIOLATION</option>
+</select>  </div> </div>
+<br />
+<label>Criminal Time:</label> <div class="g">
+<input type="text" name="criminaltime" maxlength="30" value="" placeholder="e.g.01/21/2022" autofocus />
+</div> </div>
+<br />
+<label>District:</label> <a href="https://www.chicago.gov/city/en/depts/dcd/supp_info/view_tif_districtmapsbyregion.html" target="_blank"> Check District Number Here!</a><div class="g">
+<input type="text" name="district" maxlength="200" value="" placeholder="e.g.014" autofocus />
+</div> </div>
+
+<div id="j" class="f"> <div class="g"> <button type="submit"> Search </button> </div> </div>
+<main> <aside id="side">  <div id="tocNavLeft" class="tocNav"><span></span></div>
+
+</form>
+
+<h2>search crime record frome chicago</h2>
+{# 使用 length 过滤器获取 movies 变量的长度 #}
+<p>{{ results|length }} result</p>
+<ul>
+    {% for movie in results %}  {# 迭代 results 变量 #}
+    <li>Date: {{ movie["Date"] }} <br>
+       Block: {{ movie["Block"] }}<br>
+        District: {{ movie["District"] }} <br>
+         Case Number: {{ movie["Case Number"] }} <br>
+          Location: {{ movie["Location"] }} <br>
+           Criminal Type: {{ movie["Primary Type"] }}
+           <br><br>
+          </li>  {# 等同于 movie['title'] #}
+    {% endfor %}  {# 使用 endfor 标签结束 for 语句 #}
+</ul>
+
+        <h1>About CCR Search Engine</h1> <p class="h2">Are you aware of crimes that happened in where you live? To help Chicago citizen prepare themselves and their family to better face the increasing crimes in the Chicago city, this CCRS is aimed to help the citizens to search for the criminal records and get a better sense of dangerous and safe areas in the city.
+        Users may use the filter engine designed on this page, to search for criminal records based upon criminal types and when and where the crimes happened. Users may also use Search features, including <b>Location Search</b>, <b>Criminal Type Search</b>, and <b>Criminal Time search</b>, separately to access the data based upon their needs in order to solve tehir everyday problems and raise the awareness of crimes in the living areas. </p> </div>
+
+<table width="850" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="2">
+      <p align="center" class="footnote">
+<a href="ad_search.html" title="Home" style="border-right: 1px solid #666666;"> Home </a>
+	<a href="caseid.html" title="Search for Location" style="border-right: 1px solid #666666;"> Case ID Search </a>
+	<a href="location.html" title="Search for Location" style="border-right: 1px solid #666666;"> Location Search </a>
+	<a href="criminaltype.html" title="Criminal Type Search" style="border-right:1px solid #666666;"> Criminal Type Searh </a>
+	<a href="criminaltime.html" title="Criminal Time Search" style="border-right: 1px solid #666666;"> Criminal Time Search </a>
+	<a href="admin.html" title="Criminal Time Search" style="border-right: 1px solid #666666;"> Admin </a>
+</p>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td><p align="center" class="footnote">
+ &copy; 2022 NoSQL Ninja, University of Akron <br />
+        Last Revised: Jun. 26, 2022
+    </p></td>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
