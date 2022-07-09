@@ -75,7 +75,7 @@ For the WSGI configuration file, open it and replace it as follow, or replace it
 import sys  
 path = '/home/scuaaa/web_app2/web_app_python_flask_mongodb'  # path to your repos  
 if path not in sys.path:  
-&ensp    sys.path.append(path)  
+&ensp;   sys.path.append(path)  
 from wsgi import app as application  
 
 5. set up the password. For the username and passwords, opening the file login_user2.py  
