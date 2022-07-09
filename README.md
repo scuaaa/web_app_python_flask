@@ -81,10 +81,8 @@ from wsgi import app as application
 5. set up the password. For the username and passwords, opening the file login_user2.py  
 Changing the USERS as following.  
   
-USERS = [  
-    {  
+USERS = [{  
         "id": 1,  
         "name": 'tom',  
         "password": generate_password_hash('123')  
-    }  
-]  
+    }]  
