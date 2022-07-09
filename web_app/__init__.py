@@ -22,8 +22,8 @@ database_name = os.getenv('database', "dev")
 collection_name = os.getenv('collection', "dev")
 
 client=MongoClient(uri2,connectTimeoutMS=30000, socketTimeoutMS=None, connect=False, maxPoolsize=1)
-db=client["test-DB"]
-criminal = db["crime"]
+db=client[database_name]
+criminal = db[collection_name]
 
 @app.route('/logout') 
 @login_required

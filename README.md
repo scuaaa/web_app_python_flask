@@ -34,7 +34,11 @@ If you download the mongodb compass, it will be much easier fir you to import th
 
 2. setup the pythonanywhere web server.  
 Create a account in the [pythonanywhere]( https://www.pythonanywhere.com/), your need a pay account to connect mongodb from the web server. But you can choose 5$/month.  
-Using bash to create a virtual environment, we use python 3.9. 
+Using bash to get the repo first,  
+git clone https://github.com/scuaaa/web_app_python_flask_mongodb  
+
+create a virtual environment, we use python 3.9. 
+
 mkdir virtual  
 
 python3 -m venv virtual  
@@ -45,3 +49,41 @@ Then navigate to the repo, install the requirements by
 
 Pip install -r requirements.txt 
 
+3. setup your env variables. First open the .env file in the repo, replacing the uri, database, collection to connect your mongodb database.
+
+uri="mongodb+srv://<user_name>:<password>@atlascluster.4qnuciy.mongodb.net/?retryWrites=true&w=majority"  
+database="test"  
+collection="test"  
+
+the code for python connect the mongdb atlas database are:  
+  
+uri2 = os.getenv('uri', "dev")  
+database_name = os.getenv('database', "dev")  
+collection_name = os.getenv('collection', "dev")  
+client=MongoClient(uri2,connectTimeoutMS=30000, socketTimeoutMS=None, connect=False, maxPoolsize=1)  
+db=client[database_name]  
+criminal = db[collection_name]  
+
+
+4. Setup the web application. Selecting the web icon in the dashboard. Choose the Source code and the working directory to the repo directory. Also setup the Virtualenv to your virtual direction.   
+
+![](pictures/websetup.png)  
+
+For the WSGI configuration file, open it and replace it as follow:  
+
+import sys  
+path = '/home/scuaaa/web_app2/web_app_python_flask_mongodb'  # path to your repos  
+if path not in sys.path:  
+    sys.path.append(path)  
+from wsgi import app as application  
+
+5. set up the password. For the username and passwords, opening the file login_user2.py  
+Changing the USERS as following.  
+  
+USERS = [  
+    {  
+        "id": 1,  
+        "name": 'tom',  
+        "password": generate_password_hash('123')  
+    }  
+]  
