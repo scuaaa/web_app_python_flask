@@ -52,7 +52,7 @@ Pip install -r requirements.txt
 
 3. setup your env variables. First open the .env file in the repo, replacing the uri, database, collection to connect your mongodb database.
 
-uri="mongodb+srv://<user_name>:<password>@atlascluster.4qnuciy.mongodb.net/?retryWrites=true&w=majority"  
+uri="mongodb+srv://user_name:password@atlascluster.4qnuciy.mongodb.net/?retryWrites=true&w=majority"  
 database="test"  
 collection="test"  
 
@@ -68,14 +68,14 @@ criminal = db[collection_name]
 
 4. Setup the web application. Selecting the web icon in the dashboard. Choose the Source code and the working directory to the repo directory. Also setup the Virtualenv to your virtual direction.   
 
-![](pictures/websetup.png)  
+![](pictures/web_setup.png)  
 
-For the WSGI configuration file, open it and replace it as follow:  
+For the WSGI configuration file, open it and replace it as follow, or replace it with the content in wsgi_configure_file.py   
 
 import sys  
 path = '/home/scuaaa/web_app2/web_app_python_flask_mongodb'  # path to your repos  
 if path not in sys.path:  
-    sys.path.append(path)  
+&ensp    sys.path.append(path)  
 from wsgi import app as application  
 
 5. set up the password. For the username and passwords, opening the file login_user2.py  
