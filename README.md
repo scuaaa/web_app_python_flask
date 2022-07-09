@@ -29,7 +29,7 @@ mongodb+srv://your user name:password@cluster0.zu5gllz.mongodb.net/?retryWrites=
 
 Download mongodb and install it. Use mongoimport to import the dataset to your collection, the sample code should be  
   
-mongoimport --uri "mongodb+srv://username:userpassword@cluster0.zu5gllz.mongodb.net/<databsename>?retryWrites=true&w=majority" --collection your_collection /drop /jsonArray /file:dataset/crime.json  
+mongoimport --uri "mongodb+srv://username:userpassword@cluster0.zu5gllz.mongodb.net/databsename?retryWrites=true&w=majority" --collection your_collection /drop /jsonArray /file:dataset/crime.json  
 
 If you download the mongodb compass, it will be much easier fir you to import the data.
 
