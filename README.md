@@ -22,22 +22,23 @@ Go to database, and select Browse Collections. Then Add My Own Data. The databas
 
 Now [import]( https://www.mongodb.com/docs/atlas/import/mongoimport/) the dataset chicago criminal data, First get the mongodb atlas connection uri. Click Databases in the top-left corner of Atlas. From the Database Deployments view, click Connect for the Atlas cluster into which you want to migrate data. Click Connect Your Application, and you can get uri like this.  
 
-mongodb+srv://<your user id>:<password>@cluster0.zu5gllz.mongodb.net/?retryWrites=true&w=majority
+mongodb+srv://your user name:password@cluster0.zu5gllz.mongodb.net/?retryWrites=true&w=majority
 
 ![](pictures/uri.png)  
 
 
 Download mongodb and install it. Use mongoimport to import the dataset to your collection, the sample code should be  
-mongoimport --uri "mongodb+srv://<username>:<userpassword>@cluster0.zu5gllz.mongodb.net/<databsename>?retryWrites=true&w=majority" --collection <collection¡· /drop /jsonArray /file:dataset/crime.json  
+  
+mongoimport --uri "mongodb+srv://username:userpassword@cluster0.zu5gllz.mongodb.net/<databsename>?retryWrites=true&w=majority" --collection your_collection /drop /jsonArray /file:dataset/crime.json  
 
 If you download the mongodb compass, it will be much easier fir you to import the data.
 
 2. setup the pythonanywhere web server.  
-Create a account in the [pythonanywhere]( https://www.pythonanywhere.com/), your need a pay account to connect mongodb from the web server. But you can choose 5$/month.  
+Create a account in the [pythonanywhere]( https://www.pythonanywhere.com/), your need a pay account to connect mongodb from the web server.But you can choose 5$/month.  
 Using bash to get the repo first,  
 git clone https://github.com/scuaaa/web_app_python_flask_mongodb  
 
-create a virtual environment, we use python 3.9. 
+create a virtual environment, we use python 3.9.  
 
 mkdir virtual  
 
